@@ -1,0 +1,51 @@
+/* Reset */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+body { line-height: 1.5; }
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+a img {border: none; }
+abbr[title], dfn[title] { border-bottom: 1px dotted rgb(0,0,0); cursor: help; }
+
+body {
+  font:12px/1.5 "Lucida Grande", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+h1 {
+  font-size:24px;
+}
+
+h2 {
+  font-size:18px;
+}
+
+#container {
+  width:855px;
+  margin:30px auto 0 auto;
+}
+
+#masonry {
+  border:1px solid #0f0;
+}
+
+#masonry .box {
+  background:#ccc;
+  margin:5px;
+  padding:5px;
+  float:left;
+}
+
+#masonry .col1 {
+  width:150px;
+}
+
