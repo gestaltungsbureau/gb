@@ -3394,6 +3394,9 @@ var Fx = new Class({
 		onStart: $empty,
 		onCancel: $empty,
 		onComplete: $empty,
+		onStep: $empty,
+		onPause: $empty,
+		onResume:  $empty
 		*/
 		fps: 50,
 		unit: false,
@@ -3419,8 +3422,12 @@ var Fx = new Class({
 		var time = $time();
 		if (time < this.time + this.options.duration){
 			var delta = this.transition((time - this.time) / this.options.duration);
+			//Call the event
+			this.onStep(delta);
 			this.set(this.compute(this.from, this.to, delta));
 		} else {
+			//Call the event
+			this.onStep(1);
 			this.set(this.compute(this.from, this.to, 1));
 			this.complete();
 		}
@@ -3478,13 +3485,28 @@ var Fx = new Class({
 	},
 
 	pause: function(){
-		this.stopTimer();
+		//Call the event
+		if(this.stopTimer())this.onPause();
 		return this;
 	},
 
 	resume: function(){
+		//Call the event
+		this.onResume();
 		this.startTimer();
 		return this;
+	},
+	//the event fired onPause
+	onPause:  function(){
+		this.fireEvent('pause', this.subject);
+	},
+	//the event fired onResume
+	onResume:  function(){
+		this.fireEvent('resume', this.subject);		
+	},
+	//the event fired onStep, it passes on second argument the delta (0..1) of work done)
+	onStep:  function(delta){
+		this.fireEvent('step', [this.subject, delta]);
 	},
 
 	stopTimer: function(){
