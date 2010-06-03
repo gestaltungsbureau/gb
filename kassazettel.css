@@ -1,0 +1,83 @@
+body {
+  font:12px/1.5 "Lucida Grande", sans-serif;
+}
+
+#container {
+  position:absolute;
+  top:50px;
+  width:900px;
+  left:50%;
+  margin-left:-450px;
+}
+
+#wrapper {
+  width:900px;
+  height:500px;
+  position:absolute;
+  left:-10px;
+  top:65px;
+}
+
+#table {
+  width:500px;
+  height:500px;
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.card {
+  position:relative;
+  float:left;
+  padding:0;
+  margin:5px;
+  -webkit-transition: -webkit-transform 0.20s ease-in-out;
+  -webkit-perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -webkit-backface-visibility: hidden;
+  width:80px;
+  height:100px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.card:hover {
+  -webkit-transform: rotateY(180deg);
+}
+
+.card img {
+  -webkit-box-shadow:0 2px 3px #666;
+}
+
+.card:hover img {
+  -webkit-box-shadow:0 0 3px red;
+  border:2px solid red;
+}
+
+#stack {
+  width:300px;
+  height:300px;
+  position:absolute;
+  top:0;
+  left:600px;
+}
+
+#stack.active {
+  z-index:100;
+  cursor:pointer;
+}
+
+#navigation {
+}
+
+#navigation li {
+  float:left;
+  margin-right:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#navigation li:hover {
+  color:red;
+}
